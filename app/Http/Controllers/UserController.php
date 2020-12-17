@@ -7,8 +7,35 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    public function show ($name){
-        //$user = \DB::table('users')->where('name', $name)->first();
-        return view('users', ['user' => User::where('name', $name)->firstOrFail()]);
+    //Listar registro
+    public function index (){
+        $users = User::all();
+        return view('usuarios', ['users' => $users]);
     }
+
+    //Mostrar formultario registro
+    public function create (){
+
+    }
+
+    //Almacenar registro
+    public function store (){
+
+    }
+
+    //Ver registro especifico
+    public function show (){
+        
+    }
+
+    //Actualizar registro
+    public function update (){
+        
+    }
+
+    //Eliminar registro
+    public function destroy (){
+        
+    }
+    
 }
