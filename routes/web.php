@@ -1,7 +1,5 @@
 <?php
-/***/
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('user/{name}', 'UserController@show');
+Auth::routes();
+
+Route::get('/', 'HomeController@index')->name('home');
