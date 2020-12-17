@@ -2,7 +2,7 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"><head>
     <meta charset="utf-8">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Encuentra tu mascota</title>
+    <title>MascotaPerdida</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
 
@@ -95,7 +95,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html"><img src="images/logo30.png" alt=""> Encuentra tu mascota</a>
+          <a class="navbar-brand" href="index.html"><img src="images/logo30.png" alt=""> MascotaPerdida</a>
         </div> 
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">

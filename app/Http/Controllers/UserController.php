@@ -7,35 +7,46 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
-    //Listar registro
-    public function index (){
+    public function index()
+    {
         $users = User::all();
-        return view('usuarios', ['users' => $users]);
+        return view('usuarios.index', ['users' => $users]);
     }
 
-    //Mostrar formultario registro
-    public function create (){
-
+    public function create()
+    {
+        return view('usuarios.create');
     }
 
-    //Almacenar registro
-    public function store (){
+    public function store(Request $request)
+    {
+        $usuario = new User();
+        $usuario->name = request('name');
+        $usuario->email = request('email');
+        $usuario->password = request('password');
 
+        $usuario->save();
+
+        return redirect('/usuarios');
     }
 
-    //Ver registro especifico
-    public function show (){
+    public function show($id)
+    {
         
     }
 
-    //Actualizar registro
-    public function update (){
+    public function edit($id)
+    {
         
     }
 
-    //Eliminar registro
-    public function destroy (){
+    public function update(Request $request, $id)
+    {
         
     }
-    
+
+    public function destroy($id)
+    {
+        
+    }
 }
