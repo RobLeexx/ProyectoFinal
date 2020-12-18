@@ -2,11 +2,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
+    <div class="row justify-content-center" style="color:#ffffff";>
+        <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
-
+                <div class="card-header" align="center"><h1>{{ __('Registro') }}</h1></div>
+                </br>
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
@@ -24,7 +24,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        </br>
                         <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Email') }}</label>
 
@@ -38,7 +38,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        </br>
                         <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
 
@@ -52,7 +52,7 @@
                                 @enderror
                             </div>
                         </div>
-
+                        </br>
                         <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar Contraseña') }}</label>
 
@@ -69,6 +69,7 @@
                             </div>
                         </div>
                     </form>
+                    </br>
                 </div>
             </div>
         </div>

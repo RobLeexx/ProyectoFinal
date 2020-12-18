@@ -91,7 +91,7 @@
         </div> 
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="{{url('/')}}"><i class="icon-home icon-white"></i> Inicio</a></li>                            
+              <li><a href="{{url('/')}}"><i class="icon-home icon-white"></i>Inicio</a></li>                            
               <li><a href="{{url('usuarios')}}"
                     class="{{ Request::path() === 'usuarios' ? 'nav-link active' : 'nav-link' }}">
                     <i class="nav-icon fas fa-users"></i>
@@ -106,7 +106,7 @@
 				<li><form class="form-inline ml-3">
 					<a>
 						<div class="input-group input-group-sm">
-						<input class="form-control form-control-navbar" name="search" type="search" size="70" placeholder="Buscar (especie, raza, sexo...)" aria-label="Search">
+						<input class="form-control form-control-navbar" name="search" type="search" size="60" placeholder="Buscar (especie, raza, sexo...)" aria-label="Search">
 						<div class="input-group-append">
 						<i class="fas fa-search"></i>
 						</div>
@@ -114,11 +114,16 @@
 					</div>
 				</form>
 				</li>
-              <li>
-                @guest
-                <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+				@guest
+				<li>
+				<a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a></li>
+				<li>
+				<a class="nav-link" href="{{ route('register') }}">{{ __('Registrarse') }}</a></li>
                 @else
-                <a>{{ Auth::user()->name }}</a></li>
+				<li><a>{{ Auth::user()->name }}</a></li>
+			</li>
+				
+				
                 <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                             document.getElementById('logout-form').submit();">
                     Cerrar Sesión

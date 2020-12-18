@@ -6,7 +6,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header" align="center"><h1>{{ __('Inicio de sesión') }}</h1></div>
-                <br>
+                </br>
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
