@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="container">
-      <h2 align="center" style="color:#ffffff";>Mascotas Encontradas<a href=""><button type="button" class="btn btn-success pull-right">Agregar mascota</button></a>
+      <h2 align="center" style="color:#ffffff";>Mascotas Encontradas<a href="encontrados/create"><button type="button" class="btn btn-success pull-right">Agregar mascota</button></a>
   </h2>
   
 </br>
@@ -35,6 +35,7 @@
             <li class="list-group-item">Edad: </br> {{$encontrado->edad}}</li>
             @endif
             <li class="list-group-item">Encontrado en: </br> {{$encontrado->ubicacion}}</li>
+            <li class="list-group-item">Contacto: </br> {{$encontrado->contacto}}</li>
         </ul>
         <div class="card-body" align="center">
             <a href="#" class="card-link">Ver</a>
@@ -43,5 +44,6 @@
     @endforeach
 
 </div>
+<br>
 
 @endsection

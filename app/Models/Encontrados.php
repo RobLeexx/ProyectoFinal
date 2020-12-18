@@ -8,4 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class Encontrados extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'contacto',
+        'titulo',
+        'especie',
+        'raza',
+        'sexo',
+        'edad',
+        'descripcion',
+        'ubicacion',
+    ];
+
 }
