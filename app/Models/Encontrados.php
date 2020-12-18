@@ -17,6 +17,8 @@ class Encontrados extends Model
         'edad',
         'descripcion',
         'ubicacion',
+        'fecha_creacion',
+        'fecha_actualizacion',
     ];
 
 }

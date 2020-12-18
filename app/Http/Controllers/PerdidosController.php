@@ -18,22 +18,21 @@ class PerdidosController extends Controller
         return view('perdidos.create');
     }
 
-
     public function store(Request $request)
     {
-        $encontrado = new Encontrados();
-        $encontrado->contacto = request('contacto');
-        $encontrado->titulo = request('titulo');
-        $encontrado->especie = request('especie');
-        $encontrado->raza = request('raza');
-        $encontrado->sexo = request('sexo');
-        $encontrado->edad = request('edad');
-        $encontrado->descripcion = request('descripcion');
-        $encontrado->ubicacion = request('ubicacion');
+        $perdido = new Perdidos();
+        $perdido->contacto = request('contacto');
+        $perdido->titulo = request('titulo');
+        $perdido->especie = request('especie');
+        $perdido->raza = request('raza');
+        $perdido->sexo = request('sexo');
+        $perdido->edad = request('edad');
+        $perdido->descripcion = request('descripcion');
+        $perdido->ubicacion = request('ubicacion');
 
-        $encontrado->save();
+        $perdido->save();
 
-        return redirect('/encontrados');
+        return redirect('/perdidos');
     }
 
     public function show($id)
