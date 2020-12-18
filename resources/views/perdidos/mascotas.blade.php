@@ -2,6 +2,11 @@
 
 @section('content')
 
+<div class="container">
+      <h2 align="center" style="color:#ffffff";>Mascotas Perdidas<a href=""><button type="button" class="btn btn-success pull-right">Agregar mascota</button></a>
+  </h2>
+  
+</br>
 <div class="row">
 
     @foreach($perdidos as $perdido)
