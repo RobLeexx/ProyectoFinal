@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserFormRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -37,12 +38,18 @@ class UserController extends Controller
 
     public function edit($id)
     {
-        
+        return view('usuarios.edit', ['user' => User::findOrFail($id)]);
     }
 
-    public function update(Request $request, $id)
+    public function update(UserFormRequest $request, $id)
     {
-        
+        $usuario = User::findOrFail($id);
+        $usuario->name = $request->get('name');
+        $usuario->email = $request->get('email');
+
+        $usuario->update();
+
+        return redirect('/usuarios');
     }
 
     public function destroy($id)
