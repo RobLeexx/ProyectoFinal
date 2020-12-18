@@ -40,14 +40,6 @@
         padding-top: 60px;
       }
     </style>
-
-    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-   
-
-  	<!-- Google Fonts call. Font Used Open Sans & Raleway -->
 	<link href="{{url('http://fonts.googleapis.com/css?family=Raleway:400,300')}}" rel="stylesheet" type="text/css">
   	<link href="{{url('http://fonts.googleapis.com/css?family=Open+Sans')}}" rel="stylesheet" type="text/css">
 
@@ -95,11 +87,11 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="{{url('inicio')}}"><img src="images/logo30.png" alt=""> MascotaPerdida</a>
+          <a class="navbar-brand" href="{{url('/')}}"><img src="images/logo30.png" alt=""> MascotaPerdida</a>
         </div> 
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><a href="{{url('inicio')}}"><i class="icon-home icon-white"></i> Inicio</a></li>                            
+              <li><a href="{{url('/')}}"><i class="icon-home icon-white"></i> Inicio</a></li>                            
               <li><a href="{{url('usuarios')}}"
                     class="{{ Request::path() === 'usuarios' ? 'nav-link active' : 'nav-link' }}">
                     <i class="nav-icon fas fa-users"></i>
@@ -109,17 +101,19 @@
                         <span class="right badge badge-danger">{{ $users_count ?? '0' }}</span>
                     </p>
                     </a></li>
-              <li><a href="login.html"><i class="icon-lock icon-white"></i> Perdidos</a></li>
-              <li><a href="user.html"><i class="icon-user icon-white"></i> Encontrados</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
-              <li><a><i class="icon-user icon-white"></i> &nbsp</a></li>
+              <li><a href="{{url('perdidos')}}"><i class="icon-lock icon-white"></i> Perdidos</a></li>
+              <li><a href="{{url('encontrados')}}"><i class="icon-user icon-white"></i> Encontrados</a></li>
+				<li><form class="form-inline ml-3">
+					<a>
+						<div class="input-group input-group-sm">
+						<input class="form-control form-control-navbar" name="search" type="search" size="70" placeholder="Buscar (especie, raza, sexo...)" aria-label="Search">
+						<div class="input-group-append">
+						<i class="fas fa-search"></i>
+						</div>
+					</a>
+					</div>
+				</form>
+				</li>
               <li>
                 @guest
                 <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
@@ -140,9 +134,8 @@
             </ul>
           </div>
         </div>
-    </div>
-
-    <div class="container">
+    </div></br></br>
+</br></br><div class="container">
         <section class="content">
             @yield('content')
         </section>
